@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JODxREAL VIP 👑</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1697065585269699');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1697065585269699&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        :root {
+            --bg-grad: linear-gradient(135deg, #050b14 0%, #0a1128 50%, #020617 100%);
+            --accent-color: #00f2fe;
+            --accent-glow: rgba(0, 242, 254, 0.4);
+            --neon-green: #00ff87;
+            --card-glass: rgba(15, 23, 42, 0.85);
+            --border-glass: rgba(0, 242, 254, 0.3);
+            --text-main: #FFFFFF;
+            --text-muted: #94A3B8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: var(--bg-grad);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-main);
+            padding: 16px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 390px;
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 28px;
+            padding: 26px 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Top Floating VIP Tag */
+        .vip-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(90deg, rgba(0, 242, 254, 0.15), rgba(0, 255, 135, 0.15));
+            border: 1px solid var(--border-glass);
+            border-radius: 30px;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--accent-color);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-green);
+            animation: pulse 1.2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.4; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Profile Image Container */
+        .avatar-wrap {
+            position: relative;
+            width: 125px;
+            height: 125px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .avatar-ring {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), var(--neon-green));
+            opacity: 0.9;
+            filter: blur(8px);
+            animation: rotateGlow 4s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .avatar-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #050b14;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Brand Title & Subtitle */
+        .brand-title {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+        }
+
+        .brand-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Feature Highlights Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 12px 6px;
+            transition: transform 0.2s;
+        }
+
+        .stat-val {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+        .stat-lbl {
+            font-size: 9px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* Action Button */
+        .cta-box {
+            width: 100%;
+        }
+
+        .cta-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 18px 20px;
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            color: #030712;
+            font-size: 18px;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 30px var(--accent-glow);
+            animation: pulseGlow 1.8s infinite;
+            overflow: hidden;
+        }
+
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent,
+                rgba(255, 255, 255, 0.5),
+                transparent
+            );
+            transform: rotate(30deg);
+            animation: sweep 2.2s infinite;
+        }
+
+        @keyframes sweep {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 242, 254, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 35px rgba(0, 242, 254, 0.85); }
+        }
+
+        /* Countdown Box */
+        .timer-box {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px dashed var(--border-glass);
+            border-radius: 16px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .timer-text {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .timer-clock {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--neon-green);
+            font-family: monospace;
+        }
+
+        /* Footer Info */
+        .footer {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOMO Popup */
+        .fomo-pop {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--accent-color);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            z-index: 10;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Live Status -->
+        <div class="vip-tag">
+            <span class="live-dot"></span> VIP ACCESS ACTIVE
+        </div>
+
+        <!-- Profile Avatar -->
+        <div class="avatar-wrap">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner">
+                <img src="https://i.ibb.co/My5FNkF8/IMG-20260903-020753-298.jpg" alt="JODxREAL VIP" class="avatar-img">
+            </div>
+        </div>
+
+        <!-- Channel Info -->
+        <div>
+            <h1 class="brand-title">JODxREAL VIP 👑</h1>
+            <p class="brand-desc">Official Premium Telegram Channel 🎰</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-val">12K+</div>
+                <div class="stat-lbl">Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">99.8%</div>
+                <div class="stat-lbl">Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">FREE</div>
+                <div class="stat-lbl">Join Now</div>
+            </div>
+        </div>
+
+        <!-- Direct CTA Link -->
+        <div class="cta-box">
+            <a href="https://t.me/+TXzLcoKfn_EyMjll" class="cta-btn">
+                ⚡ JOIN TELEGRAM NOW ⚡
+            </a>
+        </div>
+
+        <!-- Timer -->
+        <div class="timer-box">
+            <span class="timer-text">FREE ACCESS EXPIRES IN:</span>
+            <span class="timer-clock" id="timer">00:15</span>
+        </div>
+
+        <!-- Footer Clickable Admin Link -->
+        <div class="footer">
+            Ads Managed By <a href="https://t.me/senorita_xoxo" target="_blank">@senorita_xoxo</a>
+        </div>
+    </div>
+
+    <!-- Live Join Popup Notification -->
+    <div class="fomo-pop" id="fomo">
+        <span style="color: var(--neon-green);">🔥 Amit K.</span> just joined the VIP Channel!
+    </div>
+
+    <script>
+        // Countdown Timer Script
+        let timeLeft = 15;
+        const timerDisplay = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerDisplay.innerText = "00:00";
+            } else {
+                timeLeft--;
+                timerDisplay.innerText = "00:" + (timeLeft < 10 ? '0' + timeLeft : timeLeft);
+            }
+        }, 1000);
+
+        // Simulated FOMO Popups
+        const names = ["Aman S.", "Vikram R.", "Rohan K.", "Priya P.", "Sameer N.", "Karan T."];
+        const fomo = document.getElementById('fomo');
+        
+        setInterval(() => {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            fomo.innerHTML = `<span style="color: var(--neon-green);">🔥 ${randomName}</span> just joined the VIP Channel!`;
+        }, 3500);
+    </script>
+
+</body>
+</html>
